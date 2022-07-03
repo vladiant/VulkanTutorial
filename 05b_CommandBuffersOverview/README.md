@@ -6,4 +6,4 @@
 
 ## Links
 * [Drawing a Triangle/Drawing/Command buffers](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Command_buffers)
-* [vkCmdBindPipeline(3) Manual Pagee](https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/vkCmdBindPipeline.html)
+* [vkCmdBindPipeline(3) Manual Page](https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/vkCmdBindPipeline.html)
