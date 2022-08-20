@@ -15,6 +15,8 @@ LvePipeline::LvePipeline(LveDevice& device, const std::string& vertFilepath,
 
 PipelineConfigInfo LvePipeline::defaultPipelineConfigInfo(uint32_t width,
                                                           uint32_t height) {
+  static_cast<void>(width);
+  static_cast<void>(height);
   PipelineConfigInfo configInfo{};
   return configInfo;
 }
@@ -34,6 +36,7 @@ std::vector<char> LvePipeline::readFile(const std::string& filepath) {
 void LvePipeline::createGraphicsPipeline(const std::string& vertFilepath,
                                          const std::string& fragFilepath,
                                          const PipelineConfigInfo& configInfo) {
+  static_cast<void>(configInfo);
   auto vertCode = readFile(vertFilepath);
   auto fragCode = readFile(fragFilepath);
 
