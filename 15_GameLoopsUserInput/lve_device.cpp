@@ -14,6 +14,9 @@ debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
               VkDebugUtilsMessageTypeFlagsEXT messageType,
               const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
               void *pUserData) {
+  static_cast<void>(messageSeverity);
+  static_cast<void>(messageType);
+  static_cast<void>(pUserData);
   std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
 
   return VK_FALSE;
