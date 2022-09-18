@@ -72,7 +72,7 @@ void FirstApp::createCommandBuffers() {
     throw std::runtime_error("failed to allocate command buffers");
   }
 
-  for (int i = 0; i < commandBuffers.size(); i++) {
+  for (unsigned int i = 0; i < commandBuffers.size(); i++) {
     VkCommandBufferBeginInfo beginInfo{};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
