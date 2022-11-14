@@ -57,7 +57,7 @@ void FirstApp::loadGameObjects() {
       {1.f, 1.f, .1f}, {.1f, 1.f, 1.f}, {1.f, 1.f, 1.f}  //
   };
 
-  for (int i = 0; i < lightColors.size(); i++) {
+  for (size_t i = 0; i < lightColors.size(); i++) {
     auto pointLight = LveGameObject::makePointLight(0.2f);
     pointLight.color = lightColors[i];
     auto rotateLight = glm::rotate(
