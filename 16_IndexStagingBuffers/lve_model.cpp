@@ -16,6 +16,8 @@ LveModel::~LveModel() {
     vkDestroyBuffer(lveDevice.device(), indexBuffer, nullptr);
     vkFreeMemory(lveDevice.device(), indexBufferMemory, nullptr);
   }
+  vkDestroyBuffer(lveDevice.device(), vertexBuffer, nullptr);
+  vkFreeMemory(lveDevice.device(), vertexBufferMemory, nullptr);
 }
 
 void LveModel::createVertexBuffers(
