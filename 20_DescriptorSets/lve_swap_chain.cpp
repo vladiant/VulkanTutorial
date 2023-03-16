@@ -108,6 +108,7 @@ VkResult LveSwapChain::submitCommandBuffers(const VkCommandBuffer *buffers,
                     inFlightFences[currentFrame]) != VK_SUCCESS) {
     throw std::runtime_error("failed to submit draw command buffer!");
   }
+  vkQueueWaitIdle(device.graphicsQueue());
 
   VkPresentInfoKHR presentInfo = {};
   presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
