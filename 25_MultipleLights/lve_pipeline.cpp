@@ -44,7 +44,7 @@ void LvePipeline::defaultPipelineConfigInfo(PipelineConfigInfo& configInfo) {
   configInfo.viewPortInfo.pScissors = nullptr;
 
   configInfo.rasterizationInfo.sType =
-      VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+      VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
   configInfo.rasterizationInfo.depthClampEnable = VK_FALSE;
   configInfo.rasterizationInfo.rasterizerDiscardEnable = VK_FALSE;
   configInfo.rasterizationInfo.polygonMode = VK_POLYGON_MODE_FILL;
@@ -179,7 +179,7 @@ void LvePipeline::createGraphicsPipeline(const std::string& vertFilepath,
   vertexInputInfo.pVertexBindingDescriptions = bindingDescriptions.data();
 
   VkGraphicsPipelineCreateInfo pipleineInfo{};
-  pipleineInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+  pipleineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
   pipleineInfo.stageCount = 2;
   pipleineInfo.pStages = shaderStages;
   pipleineInfo.pVertexInputState = &vertexInputInfo;
