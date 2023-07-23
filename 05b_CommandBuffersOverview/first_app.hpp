@@ -33,7 +33,7 @@ class FirstApp {
   LveDevice lveDevice{lveWindow};
   LveSwapChain lveSwapChain{lveDevice, lveWindow.getExtent()};
   std::unique_ptr<LvePipeline> lvePipeline;
-  VkPipelineLayout pipelineLayout;
+  VkPipelineLayout pipelineLayout{};
   std::vector<VkCommandBuffer> commandBuffers;
 };
 

@@ -58,10 +58,10 @@ class LveSwapChain {
   VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
 
   VkFormat swapChainImageFormat;
-  VkExtent2D swapChainExtent;
+  VkExtent2D swapChainExtent{};
 
   std::vector<VkFramebuffer> swapChainFramebuffers;
-  VkRenderPass renderPass;
+  VkRenderPass renderPass{};
 
   std::vector<VkImage> depthImages;
   std::vector<VkDeviceMemory> depthImageMemorys;
@@ -72,7 +72,7 @@ class LveSwapChain {
   LveDevice &device;
   VkExtent2D windowExtent;
 
-  VkSwapchainKHR swapChain;
+  VkSwapchainKHR swapChain{};
 
   std::vector<VkSemaphore> imageAvailableSemaphores;
   std::vector<VkSemaphore> renderFinishedSemaphores;
