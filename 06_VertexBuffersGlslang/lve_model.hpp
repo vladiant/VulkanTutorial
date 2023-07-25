@@ -35,9 +35,9 @@ class LveModel {
   void createVertexBuffers(const std::vector<Vertex>& vertices);
 
   LveDevice& lveDevice;
-  VkBuffer vertexBuffer;
-  VkDeviceMemory vertexBufferMemory;
-  uint32_t vertexCount;
+  VkBuffer vertexBuffer{};
+  VkDeviceMemory vertexBufferMemory{};
+  uint32_t vertexCount{};
 };
 
 }  // namespace lve
