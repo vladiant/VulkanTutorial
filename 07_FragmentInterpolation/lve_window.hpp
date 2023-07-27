@@ -9,7 +9,7 @@ namespace lve {
 
 class LveWindow {
  public:
-  LveWindow(int w, int h, const std::string& name);
+  LveWindow(int w, int h, std::string  name);
   ~LveWindow();
 
   LveWindow(const LveWindow&) = delete;
@@ -30,7 +30,7 @@ class LveWindow {
 
   std::string windowName;
 
-  GLFWwindow* window;
+  GLFWwindow* window{};
 };
 
 }  // namespace lve

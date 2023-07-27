@@ -54,9 +54,9 @@ class LvePipeline {
                           VkShaderModule* shaderModule);
 
   LveDevice& lveDevice;
-  VkPipeline graphicsPipeline;
-  VkShaderModule vertShaderModule;
-  VkShaderModule fragShaderModule;
+  VkPipeline graphicsPipeline{};
+  VkShaderModule vertShaderModule{};
+  VkShaderModule fragShaderModule{};
 };
 
 }  // namespace lve
