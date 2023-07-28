@@ -8,6 +8,7 @@
 #include <limits>
 #include <set>
 #include <stdexcept>
+#include <utility>
 
 namespace lve {
 
@@ -18,7 +19,7 @@ LveSwapChain::LveSwapChain(LveDevice &deviceRef, VkExtent2D extent)
 
 LveSwapChain::LveSwapChain(LveDevice &deviceRef, VkExtent2D extent,
                            std::shared_ptr<LveSwapChain> previous)
-    : device{deviceRef}, windowExtent{extent}, oldSwapChain{previous} {
+    : device{deviceRef}, windowExtent{extent}, oldSwapChain{std::move(previous)} {
   init();
 
   // Clean old swapchain as it is no longer needed
