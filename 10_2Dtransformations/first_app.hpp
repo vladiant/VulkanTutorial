@@ -39,7 +39,7 @@ class FirstApp {
   LveDevice lveDevice{lveWindow};
   std::unique_ptr<LveSwapChain> lveSwapChain;
   std::unique_ptr<LvePipeline> lvePipeline;
-  VkPipelineLayout pipelineLayout;
+  VkPipelineLayout pipelineLayout{};
   std::vector<VkCommandBuffer> commandBuffers;
   std::vector<LveGameObject> gameObjects;
 };

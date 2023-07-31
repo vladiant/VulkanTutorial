@@ -25,7 +25,7 @@ void LveModel::createVertexBuffers(
                              VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
                          vertexBuffer, vertexBufferMemory);
 
-  void* data;
+  void* data = nullptr;
   vkMapMemory(lveDevice.device(), vertexBufferMemory, 0, bufferSize, 0, &data);
   memcpy(data, vertices.data(), static_cast<size_t>(bufferSize));
   vkUnmapMemory(lveDevice.device(), vertexBufferMemory);
