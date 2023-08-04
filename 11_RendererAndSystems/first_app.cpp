@@ -15,7 +15,7 @@ namespace lve {
 
 FirstApp::FirstApp() { loadGameObjects(); }
 
-FirstApp::~FirstApp() {}
+FirstApp::~FirstApp() = default;
 
 void FirstApp::loadGameObjects() {
   std::vector<LveModel::Vertex> vertices{{{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
