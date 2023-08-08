@@ -16,7 +16,7 @@ namespace lve {
 
 FirstApp::FirstApp() { loadGameObjects(); }
 
-FirstApp::~FirstApp() {}
+FirstApp::~FirstApp() = default;
 
 // temporary helper function, creates a 1x1x1 cube centered at offset
 std::unique_ptr<LveModel> createCubeModel(LveDevice& device, glm::vec3 offset) {
