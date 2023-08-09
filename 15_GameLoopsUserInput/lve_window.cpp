@@ -1,11 +1,12 @@
 #include "lve_window.hpp"
 
 #include <stdexcept>
+#include <utility>
 
 namespace lve {
 
-LveWindow::LveWindow(int w, int h, const std::string& name)
-    : width{w}, height{h}, windowName{name} {
+LveWindow::LveWindow(int w, int h, std::string  name)
+    : width{w}, height{h}, windowName{std::move(name)} {
   initWindow();
 }
 
