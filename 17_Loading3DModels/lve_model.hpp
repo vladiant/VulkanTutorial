@@ -56,14 +56,14 @@ class LveModel {
 
   LveDevice& lveDevice;
 
-  VkBuffer vertexBuffer;
-  VkDeviceMemory vertexBufferMemory;
-  uint32_t vertexCount;
+  VkBuffer vertexBuffer{};
+  VkDeviceMemory vertexBufferMemory{};
+  uint32_t vertexCount{};
 
   bool hasIndexBuffer{false};
-  VkBuffer indexBuffer;
-  VkDeviceMemory indexBufferMemory;
-  uint32_t indexCount;
+  VkBuffer indexBuffer{};
+  VkDeviceMemory indexBufferMemory{};
+  uint32_t indexCount{};
 };
 
 }  // namespace lve
