@@ -18,7 +18,7 @@ namespace lve {
 
 FirstApp::FirstApp() { loadGameObjects(); }
 
-FirstApp::~FirstApp() {}
+FirstApp::~FirstApp() = default;
 
 void FirstApp::loadGameObjects() {
   std::shared_ptr<LveModel> lveModel =
