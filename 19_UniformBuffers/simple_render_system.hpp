@@ -28,7 +28,7 @@ class SimpleRenderSystem {
 
   LveDevice& lveDevice;
   std::unique_ptr<LvePipeline> lvePipeline;
-  VkPipelineLayout pipelineLayout;
+  VkPipelineLayout pipelineLayout{};
 };
 
 }  // namespace lve
