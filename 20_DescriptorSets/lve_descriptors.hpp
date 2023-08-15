@@ -37,7 +37,7 @@ class LveDescriptorSetLayout {
 
  private:
   LveDevice &lveDevice;
-  VkDescriptorSetLayout descriptorSetLayout;
+  VkDescriptorSetLayout descriptorSetLayout{};
   std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings;
 
   friend class LveDescriptorWriter;
@@ -77,7 +77,7 @@ class LveDescriptorPool {
 
  private:
   LveDevice &lveDevice;
-  VkDescriptorPool descriptorPool;
+  VkDescriptorPool descriptorPool{};
 
   friend class LveDescriptorWriter;
 };
