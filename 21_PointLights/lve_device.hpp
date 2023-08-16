@@ -71,7 +71,7 @@ class LveDevice {
                            VkMemoryPropertyFlags properties, VkImage &image,
                            VkDeviceMemory &imageMemory);
 
-  VkPhysicalDeviceProperties properties;
+  VkPhysicalDeviceProperties properties{};
 
  private:
   void createInstance();
@@ -92,16 +92,16 @@ class LveDevice {
   bool checkDeviceExtensionSupport(VkPhysicalDevice device);
   SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
 
-  VkInstance instance;
-  VkDebugUtilsMessengerEXT debugMessenger;
+  VkInstance instance{};
+  VkDebugUtilsMessengerEXT debugMessenger{};
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
   LveWindow &window;
-  VkCommandPool commandPool;
+  VkCommandPool commandPool{};
 
-  VkDevice device_;
-  VkSurfaceKHR surface_;
-  VkQueue graphicsQueue_;
-  VkQueue presentQueue_;
+  VkDevice device_{};
+  VkSurfaceKHR surface_{};
+  VkQueue graphicsQueue_{};
+  VkQueue presentQueue_{};
 
   // Check for the proper value
   const std::vector<const char *> validationLayers = {
