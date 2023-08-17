@@ -30,7 +30,7 @@ LveModel::LveModel(LveDevice& lveDevice, const LveModel::Data& data)
   createIndexBuffers(data.indices);
 }
 
-LveModel::~LveModel() {}
+LveModel::~LveModel() = default;
 
 std::unique_ptr<LveModel> LveModel::createmodelFromFile(
     LveDevice& device, const std::string& filepath) {
