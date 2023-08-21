@@ -58,11 +58,11 @@ class LveModel {
   LveDevice& lveDevice;
 
   std::unique_ptr<LveBuffer> vertexBuffer;
-  uint32_t vertexCount;
+  uint32_t vertexCount{};
 
   bool hasIndexBuffer{false};
   std::unique_ptr<LveBuffer> indexBuffer;
-  uint32_t indexCount;
+  uint32_t indexCount{};
 };
 
 }  // namespace lve

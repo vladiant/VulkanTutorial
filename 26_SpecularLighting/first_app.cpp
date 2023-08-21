@@ -27,7 +27,7 @@ FirstApp::FirstApp() {
   loadGameObjects();
 }
 
-FirstApp::~FirstApp() {}
+FirstApp::~FirstApp() = default;
 
 void FirstApp::loadGameObjects() {
   std::shared_ptr<LveModel> lveModel =
@@ -72,12 +72,12 @@ void FirstApp::loadGameObjects() {
 void FirstApp::run() {
   std::vector<std::unique_ptr<LveBuffer>> uboBuffers(
       LveSwapChain::MAX_FRAMES_IN_FLIGHT);
-  for (size_t i = 0; i < uboBuffers.size(); i++) {
-    uboBuffers[i] = std::make_unique<LveBuffer>(
+  for (auto & uboBuffer : uboBuffers) {
+    uboBuffer = std::make_unique<LveBuffer>(
         lveDevice, sizeof(GlobalUbo), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
         lveDevice.properties.limits.minUniformBufferOffsetAlignment);
-    uboBuffers[i]->map();
+    uboBuffer->map();
   }
 
   auto globalSetLayout = LveDescriptorSetLayout::Builder(lveDevice)

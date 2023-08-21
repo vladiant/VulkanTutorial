@@ -100,15 +100,15 @@ void SpirvHelper::InitResources(TBuiltInResource &Resources) {
   Resources.maxTaskWorkGroupSizeY_NV = 1;
   Resources.maxTaskWorkGroupSizeZ_NV = 1;
   Resources.maxMeshViewCountNV = 4;
-  Resources.limits.nonInductiveForLoops = 1;
-  Resources.limits.whileLoops = 1;
-  Resources.limits.doWhileLoops = 1;
-  Resources.limits.generalUniformIndexing = 1;
-  Resources.limits.generalAttributeMatrixVectorIndexing = 1;
-  Resources.limits.generalVaryingIndexing = 1;
-  Resources.limits.generalSamplerIndexing = 1;
-  Resources.limits.generalVariableIndexing = 1;
-  Resources.limits.generalConstantMatrixVectorIndexing = 1;
+  Resources.limits.nonInductiveForLoops = true;
+  Resources.limits.whileLoops = true;
+  Resources.limits.doWhileLoops = true;
+  Resources.limits.generalUniformIndexing = true;
+  Resources.limits.generalAttributeMatrixVectorIndexing = true;
+  Resources.limits.generalVaryingIndexing = true;
+  Resources.limits.generalSamplerIndexing = true;
+  Resources.limits.generalVariableIndexing = true;
+  Resources.limits.generalConstantMatrixVectorIndexing = true;
 }
 
 EShLanguage SpirvHelper::FindLanguage(
@@ -142,7 +142,7 @@ bool SpirvHelper::GLSLtoSPV(const vk::ShaderStageFlagBits shader_type,
   InitResources(Resources);
 
   // Enable SPIR-V and Vulkan rules when parsing GLSL
-  EShMessages messages = (EShMessages)(EShMsgSpvRules | EShMsgVulkanRules);
+  auto messages = (EShMessages)(EShMsgSpvRules | EShMsgVulkanRules);
 
   shaderStrings[0] = pshader;
   shader.setStrings(shaderStrings, 1);
